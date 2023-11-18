@@ -3,6 +3,4 @@
 @tailwind utilities;
 
 
-* {
-  background-color: #23c503;
-}
+body {background-color: #000;}

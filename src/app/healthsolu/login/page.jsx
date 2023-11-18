@@ -1,20 +1,25 @@
+import Image from "next/image"
 import Link from "next/link"
 import './login.scss'
 
 export default function Login() {
     return(
         <div className="container-box">
-            <div className="input">
-                <h1>LOGIN</h1>
-                <label htmlFor="text">Email:</label>
-                <input type="text" name="email" id="email" />
-                <label htmlFor="text">Senha:</label>
-                <input type="text" name="senha" id="senha" />
-                <p>Não tem cadastro? Então <Link href='/healthsolu'>cadastre-se</Link></p>
-            </div>
-            <div className="img-text">
-                <h1>APRESENTAÇÃO</h1>
-                <p>Nossa empresa é lider do mercado e seriamente capacitada para cuidar da sua saúde e bem está no seu dia a dia. Proporcionamos sempre o melhor para o nosso cliente!</p>
+            <div className="geral">
+                <div className="interação">
+                    <h1>LOGIN</h1>
+                    <div className="inputs">
+                        <label htmlFor="text">Email</label>
+                        <input type="text" name="email" id="email"  placeholder="@gmail.com"/>
+                        <label htmlFor="text">Senha</label>
+                        <input type="text" name="senha" id="senha" placeholder="Senha"/>
+                    </div>
+                    <button>Entrar</button>
+                    <p>Não tem cadastro? Então <Link href='/healthsolu/cadastro'>cadastre-se.</Link></p>
+                </div>
+                <div className="img-text">
+                    <Image src='/img/imgLogin.png' alt="" width={900} height={800}/>
+                </div>
             </div>
         </div>
     )
