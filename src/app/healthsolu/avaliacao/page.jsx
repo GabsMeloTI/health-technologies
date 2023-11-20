@@ -1,24 +1,13 @@
-import Link from 'next/link'
-import Image from 'next/image'
+
 import './avaliacao.scss'
+import Menu from '@/components/menu/page'
+import Rodape from '@/components/rodape/page'
 
 export default function Avalição() {
   return (
     <div className='container-ava'>
-        <div className='option'>
-            <div className='user'>
-                <Image src='/img/logoHealth.png' alt='' width={200} height={100}/>
-                <p>Usuário</p>
-            </div>
-            <div className='links'>
-                <Link href=''><p>Avaliações</p></Link>
-                <Link href=''><p>Calcular IMC</p></Link>
-                <Link href=''><p>Calcular TMB</p></Link>
-                <Link href=''><p>Dieta simples</p></Link>
-                <Link href=''><p>Meus dados</p></Link>
-            </div>
-        </div>
-        <div className='inputs'>
+        <Menu/>
+        <div className='dados'>
             <div className='txt'> 
                 <h1>REGISTRAR AVALIAÇÃO</h1>
                 <p>Digitar sempre valores inteiros, arredonde se precisar.</p> 
@@ -38,6 +27,7 @@ export default function Avalição() {
                 <input type="text" name="data" id="data" placeholder="10/04/2023"/>
                 <button>Registrar avaliação</button>
             </div>
+            <Rodape/>
         </div>  
     </div>
   )

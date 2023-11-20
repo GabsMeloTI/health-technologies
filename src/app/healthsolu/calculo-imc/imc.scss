@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.container-imc {
+    display: flex;
+    flex-direction: row;
+
+    color: #fff;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+
+
+    .dados {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 2% 0% 0%;
+
+        .textos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h1 {
+                font-weight: bolder;
+                font-size: 1.5em;
+                color: #17bcfd;
+                
+            }
+
+            div {
+                background-color: #17bcfd;
+                padding: 2%;
+                border-radius: 8px;
+                width: 50%;
+                margin: 2.5% 0%;
+            }
+
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            margin: 0% 10%;
+            
+            select {
+                color: #000;
+                border-radius: 8px;
+                padding: .5%;
+                margin-bottom: 2%;
+            }
+
+            input {
+                border-radius: 8px;
+                padding: .5%;
+                margin-bottom: 2%;
+            }
+        }
+
+        .resp {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          
+
+            p {
+                background-color: #17bcfd;
+                padding: 2%;
+                border-radius: 8px;
+                text-align: center;
+                width: 50%;
+                margin-top: 2%;
+            }
+
+            span {
+                color: #ff0000;
+                font-weight: 700;
+            }
+        }
+
+        .pesos-geral {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin: 5%;
+
+            background-color: #fff;
+            color: #000;
+
+            h1 {
+                font-weight: bolder;
+                font-size: 1.5em;
+                color: #17bcfd;
+                margin-bottom: 2%;
+            }
+
+            .pesos {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .peso {
+                display: flex;
+                flex-direction: column;
+                width: 15%;
+
+                h2 {
+                    font-weight: 700;
+                    font-size: 18px;
+                    margin: -3% 0% 8%;
+                }
+
+                img {
+                    text-align: center;
+                    align-items: center;
+                    margin-bottom: 15%;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+
+            }
+        }
+
+    }
+}
