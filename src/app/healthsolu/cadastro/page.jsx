@@ -49,11 +49,11 @@ export default function Cadastro() {
                         <label htmlFor="text">Nome completo</label>
                         <input type="text" name="nome" id="nome" value={novo.nome} onChange={handleChange} placeholder="João Silva"/>
                         <label htmlFor="text">Data de nascimento</label>
-                        <input type="date" name="nascimento" id="nascimento" value={novo.dataNascimento} onChange={handleChange} placeholder="09/04/1963"/>
+                        <input type="text" name="nascimento" id="nascimento" value={novo.dataNascimento} onChange={handleChange} placeholder="09/04/1963"/>
                         <label htmlFor="text">Email</label>
                         <input type="text" name="email" id="email" value={novo.email} onChange={handleChange} placeholder="@gmail.com"/>
                         <label htmlFor="text">Celular</label>
-                        <input type="text" name="celular" id="celular" value={novo.telefone} onChange={handleChange} placeholder="(11)90000-0000"/>
+                        <input type="text" name="telefone" id="telefone" value={novo.telefone} onChange={handleChange} placeholder="(11)90000-0000"/>
                         <label htmlFor="text">Senha</label>
                         <input type="password" name="senha" id="senha" value={novo.senha} onChange={handleChange} placeholder="Senha"/>
                         <label htmlFor="text">Confirme sua senha</label>
