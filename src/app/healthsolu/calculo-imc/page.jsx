@@ -1,31 +1,76 @@
-import Menu from "@/components/menu/page"
-import Rodape from "@/components/rodape/page"
+'use client'
+import Menu from "@/components/menu/page";
+import Rodape from "@/components/rodape/page";
+import Image from "next/image";
 import './imc.scss'
-import Image from "next/image"
-
+import { useState } from "react";
 
 export default function IMC() {
+  const [valor, setValor] = useState({
+    peso: "",
+    altura: ""
+  });
+
+  const handleChange = (e) => {
+    setValor((prevValor) => ({
+      ...prevValor,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  function calcularIMC() {
+    if (valor.altura === " " || valor.peso === " " || valor.altura === 0 || valor.peso === 0 ) {
+      return 0;
+    } else {
+      const alturaMetros = valor.altura / 100;
+      const calculo = valor.peso / (alturaMetros * alturaMetros);
+      return calculo.toFixed(2);
+    }
+  }
+
+  const resultadoIMC = calcularIMC(); 
+
   return (
     <div className="container-imc">
-        <Menu/>
-        <div className="dados">
-            <div className="textos">
-                <h1>IMC: Índice de massa corporal</h1>
-                <p>Digitar sempre valores inteiros, arredonde se precisar.</p>
-                <div className="explicacao">
-                    <p>O índice de massa corporal é uma medida internacional usada para calcular se uma pessoa está no peso ideal.</p>
-                </div>
-            </div>
-            <div className="inputs">
-                <label htmlFor="text">Altura(cm)</label>
-                <input type="text" name="altura" id="altura"  placeholder="185"/>
-                <label htmlFor="text">Peso(kg)</label>
-                <input type="text" name="peso" id="peso" placeholder="80"/>
-            </div>
-            <div className="resp">
-                <p>O seu índice de massa corporal é de <span>2.50</span></p>
-            </div>
-            <div className="pesos-geral">
+      <Menu />
+      <div className="dados">
+        <div className="textos">
+          <h1>IMC: Índice de massa corporal</h1>
+          <p>Digitar sempre valores inteiros, arredonde se precisar.</p>
+          <div className="explicacao">
+            <p>
+              O índice de massa corporal é uma medida internacional usada para
+              calcular se uma pessoa está no peso ideal.
+            </p>
+          </div>
+        </div>
+        <div className="inputs">
+          <label htmlFor="number">Altura(cm)</label>
+          <input
+            type="number"
+            name="altura"
+            id="altura"
+            placeholder="185"
+            value={valor.altura}
+            onChange={handleChange}
+          />
+          <label htmlFor="number">Peso(kg)</label>
+          <input
+            type="number"
+            name="peso"
+            id="peso"
+            placeholder="80"
+            value={valor.peso}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="resp">
+          <p>
+            O seu índice de massa corporal é de{" "}
+            <span>{resultadoIMC}</span>
+          </p>
+        </div>
+        <div className="pesos-geral">
                 <h1>Entenda o resultado</h1>
                 <div className="pesos">
                     <div className="peso">
@@ -66,8 +111,8 @@ export default function IMC() {
                     </div>
                 </div>
             </div>
-            <Rodape/>
-        </div>
+        <Rodape />
+      </div>
     </div>
-  )
+  );
 }

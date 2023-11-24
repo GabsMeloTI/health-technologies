@@ -3,18 +3,16 @@ import Image from "next/image"
 import Link from "next/link"
 import './cadastro.scss'
 import { useState } from "react"
-import { Nova_Square } from "next/font/google"
 
 export default function Cadastro() {
      const [novo, setNovo] = useState({
-        id: "",
         nome: "",
-        email : "",
+        email: "",
         senha: "",
         peso: "",
         sexo: "",
         altura: "",
-        telefone:"",   
+        telefone: "",
         dataNascimento: ""
     })
 
@@ -39,6 +37,7 @@ export default function Cadastro() {
             window.location = '/'
         })
     }
+    console.log(novo);
 
     return(
         <div className="container-box">
@@ -49,24 +48,19 @@ export default function Cadastro() {
                         <label htmlFor="text">Nome completo</label>
                         <input type="text" name="nome" id="nome" value={novo.nome} onChange={handleChange} placeholder="João Silva"/>
                         <label htmlFor="text">Data de nascimento</label>
-                        <input type="text" name="nascimento" id="nascimento" value={novo.dataNascimento} onChange={handleChange} placeholder="09/04/1963"/>
+                        <input type="text" name="dataNascimento" id="dataNascimento" value={novo.dataNascimento} onChange={handleChange} placeholder="09/04/1963"/>
                         <label htmlFor="text">Email</label>
                         <input type="text" name="email" id="email" value={novo.email} onChange={handleChange} placeholder="@gmail.com"/>
                         <label htmlFor="text">Celular</label>
                         <input type="text" name="telefone" id="telefone" value={novo.telefone} onChange={handleChange} placeholder="(11)90000-0000"/>
                         <label htmlFor="text">Senha</label>
                         <input type="password" name="senha" id="senha" value={novo.senha} onChange={handleChange} placeholder="Senha"/>
-                        <label htmlFor="text">Confirme sua senha</label>
-                        <input type="password" name="confirmação" id="confirmação" placeholder="Confirmação"/>
                         <label htmlFor="text">Peso</label>
                         <input type="text" name="peso" id="peso" value={novo.peso} onChange={handleChange} placeholder="80"/>
                         <label htmlFor="text">Altura</label>
                         <input type="text" name="altura" id="altura" value={novo.altura} onChange={handleChange} placeholder="180"/>
-                        <label htmlFor="">Genêro</label>
-                        <select name="genero" id="genero" value={novo.sexo} onChange={handleChange}>
-                            <option value="">Masculino</option>
-                            <option value="">Feminino</option>
-                        </select>
+                        <label htmlFor="text">Sexo</label>
+                        <input type="text" name="sexo" id="sexo" value={novo.sexo} onChange={handleChange} placeholder="Mascluno/Feminino"/>
                         <button>Cadastrar-me</button>
                     </form>
                     <p>Já possui cadastro? Então faça o <Link href='/'>login.</Link></p>

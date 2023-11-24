@@ -1,3 +1,4 @@
+import { UserProvider } from '@/components/login/userContext'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/img/favicon.ico" />
       </head>
       <body className={inter.className}>
-       {children}
+        <UserProvider>
+          {children}
+        </UserProvider>
       </body>
     </html>
   )
