@@ -17,14 +17,16 @@ export default function Avalição() {
     peso: ""
   })
 
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState(" ");
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
+    const storedUser = JSON.parse(sessionStorage.getItem('user'));
     if (storedUser) {
-      setUserData(JSON.parse(storedUser));
+      setUserData(storedUser);
     }
   }, []);
+
+
 
   const handleChange = (e) => {
     setValor((prevValor) => ({
@@ -58,7 +60,6 @@ export default function Avalição() {
               {userData && (
                 <div>
                   <p>Bem-vindo, {userData.name}!</p>
-                  {/* Adicione mais informações do usuário conforme necessário */}
                 </div>
               )}
             <div className='txt'> 

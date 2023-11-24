@@ -13,7 +13,9 @@ export default function Cadastro() {
         sexo: "",
         altura: "",
         telefone: "",
-        dataNascimento: ""
+        dataNascimento: "",
+        objetivo: "",
+        fatorAtividade: ""
     })
 
     const handleChange = (e) => {
@@ -60,11 +62,15 @@ export default function Cadastro() {
                         <label htmlFor="text">Altura</label>
                         <input type="text" name="altura" id="altura" value={novo.altura} onChange={handleChange} placeholder="180"/>
                         <label htmlFor="text">Sexo</label>
-                        <select name="sexo" id="sexo" value={valor.sexo} onChange={handleChange}>
+                        <select name="sexo" id="sexo" value={novo.sexo} onChange={handleChange}>
                             <option value="escolha">Escolha</option>
                             <option value="masculino">Masculino</option>
                             <option value="feminino">Feminino</option>
                         </select>
+                        <label htmlFor="text">Objetivo</label>
+                        <input type="text" name="objetivo" id="objetivo" value={novo.objetivo} onChange={handleChange} placeholder="80"/>
+                        <label htmlFor="text">Fator atividade</label>
+                        <input type="text" name="fatorAtividade" id="fatorAtividade" value={novo.fatorAtividade} onChange={handleChange} placeholder="180"/>
                         <button>Cadastrar-me</button>
                     </form>
                     <p>Já possui cadastro? Então faça o <Link href='/'>login.</Link></p>

@@ -20,36 +20,28 @@ export default function LoginTeste() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        fetch("http://localhost:8080/HealthSolu/api/usuario", {
-            method: "GET", 
-            headers: { 
-                'Content-Type': 'application/json',
-            },
-        }).then((resp) => {
-            return resp.json();
-        }).then((resp) => {
-            let foundUser = null;
-    
-            for (const usu in resp) {
-                if (resp[usu].email === loginData.email && loginData.senha === resp[usu].senha) {
-                    foundUser = resp[usu];
-                    break;
+        const response = await fetch("http://localhost:8080/HealthSolu/api/usuario");
+        if(response.ok) {
+            const resp = await response.json();
+            let foundUser = " ";
+            try {
+                for (let usu = 0; usu < resp.length; usu++) {
+                    if (resp[usu].email === loginData.email && loginData.senha === resp[usu].senha) {
+                        foundUser = resp[usu];
+                        sessionStorage.setItem('user', JSON.stringify(foundUser));
+                        alert("Login efetuado com sucesso!");
+                        window.location = `/healthsolu/avaliacao`;
+                        userFound = true;
+                        // Não use o break aqui para continuar iterando se necessário
+                    }
                 }
-            }
-    
-            if (foundUser) {
-                localStorage.setItem('user', JSON.stringify(foundUser));
-                alert("Login efetuado com sucesso!");
-                
-                // Adicione o ID do usuário à URL antes de redirecionar
-                window.location = `/healthsolu/avaliacao?id=${foundUser.id}`;
-            } else {
                 alert("Email ou senha incorretos!");
-                window.location = "/";
+
+            }catch(error) {
+                console.log("Erro no response da verificação do email");
+                console.log(error);
             }
-        }).catch((error) => {
-            console.error("Erro na solicitação fetch:", error);
-        });
+        }
     }
       
     return(
