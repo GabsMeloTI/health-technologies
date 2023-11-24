@@ -19,9 +19,10 @@ export default function Dados() {
                 <label htmlFor="text">Data de nascimento</label>
                 <input type="date" name="nascimento" id="nascimento" placeholder="09/04/1963"/>     
                 <label htmlFor="">Genêro</label>
-                <select name="genero" id="genero">
-                    <option value="">Masculino</option>
-                    <option value="">Feminino</option>
+                <select name="sexo" id="sexo">
+                    <option value="escolha">Escolha</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
                 </select>
                 <label htmlFor="text">Email</label>
                 <input type="text" name="email" id="email" placeholder="@gmail.com"/>      

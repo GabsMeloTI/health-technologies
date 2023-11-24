@@ -60,7 +60,11 @@ export default function Cadastro() {
                         <label htmlFor="text">Altura</label>
                         <input type="text" name="altura" id="altura" value={novo.altura} onChange={handleChange} placeholder="180"/>
                         <label htmlFor="text">Sexo</label>
-                        <input type="text" name="sexo" id="sexo" value={novo.sexo} onChange={handleChange} placeholder="Mascluno/Feminino"/>
+                        <select name="sexo" id="sexo" value={valor.sexo} onChange={handleChange}>
+                            <option value="escolha">Escolha</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                        </select>
                         <button>Cadastrar-me</button>
                     </form>
                     <p>Já possui cadastro? Então faça o <Link href='/'>login.</Link></p>

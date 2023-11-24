@@ -3,7 +3,7 @@
 import './avaliacao.scss'
 import Menu from '@/components/menu/page'
 import Rodape from '@/components/rodape/page'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 export default function Avalição() {
@@ -68,6 +68,7 @@ export default function Avalição() {
             <form className='input'>
                 <label htmlFor="text">Sexo</label>
                 <select name="sexo" id="sexo" value={valor.sexo} onChange={handleChange}>
+                    <option value="escolha">Escolha</option>
                     <option value="masculino">Masculino</option>
                     <option value="feminino">Feminino</option>
                 </select>

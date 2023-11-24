@@ -19,50 +19,38 @@ export default function LoginTeste() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+        
         fetch("http://localhost:8080/HealthSolu/api/usuario", {
             method: "GET", 
             headers: { 
                 'Content-Type': 'application/json',
             },
-            }).then((resp) => {
-                return resp.json();
-            }).then((resp) => {
-                setLoginData(resp);
-                for(const usu in resp) {
-                    console.log(resp[usu].senha);
-                    console.log(loginData.senha);
-                    console.log(resp[usu].email);
-                    console.log(loginData.email);
-                    if (resp[usu].email === loginData.email && loginData.senha == resp[usu].senha) {
-                        console.log("Sucesso!");
-                        window.location = "/healthsolu/avaliacao";
-                    }
+        }).then((resp) => {
+            return resp.json();
+        }).then((resp) => {
+            let foundUser = null;
+    
+            for (const usu in resp) {
+                if (resp[usu].email === loginData.email && loginData.senha === resp[usu].senha) {
+                    foundUser = resp[usu];
+                    break;
                 }
+            }
+    
+            if (foundUser) {
+                localStorage.setItem('user', JSON.stringify(foundUser));
+                alert("Login efetuado com sucesso!");
                 
-            }).catch((error) => {
-                console.error("Erro na solicitação fetch:", error);
+                // Adicione o ID do usuário à URL antes de redirecionar
+                window.location = `/healthsolu/avaliacao?id=${foundUser.id}`;
+            } else {
+                alert("Email ou senha incorretos!");
+                window.location = "/";
+            }
+        }).catch((error) => {
+            console.error("Erro na solicitação fetch:", error);
         });
-
     }
-    
-
-    
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     // Enviar dados de login para a API
-    //     fetch('http://localhost:8080/HealthSolu/api/usuario', {
-    //         method: 'GET',
-    //         headers: {
-    //             'Content-Type': 'application/json; charset=UTF-8',
-    //         },
-    //     })
-    //     .then(response => {
-    //         return response.json();
-    //         console.log(response);
-    //     })                  
-    // }
       
     return(
         <div className="container-box">
