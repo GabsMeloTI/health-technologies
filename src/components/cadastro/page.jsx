@@ -68,9 +68,9 @@ export default function Cadastro() {
                             <option value="feminino">Feminino</option>
                         </select>
                         <label htmlFor="text">Objetivo</label>
-                        <input type="text" name="objetivo" id="objetivo" value={novo.objetivo} onChange={handleChange} placeholder="80"/>
+                        <input type="text" name="objetivo" id="objetivo" value={novo.objetivo} onChange={handleChange} placeholder="Emagrecer"/>
                         <label htmlFor="text">Fator atividade</label>
-                        <input type="text" name="fatorAtividade" id="fatorAtividade" value={novo.fatorAtividade} onChange={handleChange} placeholder="180"/>
+                        <input type="text" name="fatorAtividade" id="fatorAtividade" value={novo.fatorAtividade} onChange={handleChange} placeholder="Levemente Ativo"/>
                         <button>Cadastrar-me</button>
                     </form>
                     <p>Já possui cadastro? Então faça o <Link href='/'>login.</Link></p>

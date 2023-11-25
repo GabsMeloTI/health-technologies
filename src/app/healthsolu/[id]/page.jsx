@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from "react"
 import Avalição from "@/components/avaliacao/page";
-import Dieta from "@/components/dieta/page";
 import Cadastro from "@/components/cadastro/page";
 import IMC from "@/components/calculo-imc/page";
 import TMB from "@/components/calculo-tmb/page";
@@ -22,8 +21,6 @@ export default function Navegacao({params}) {
             setMsg(<Cadastro/>)
         } else if(id == 'avaliacao') {
             setMsg(<Avalição/>)
-        } else if(id == 'dieta') {
-            setMsg(<Dieta/>)
         } else if(id == 'dados') {
             setMsg(<Dados/>)
         } else {

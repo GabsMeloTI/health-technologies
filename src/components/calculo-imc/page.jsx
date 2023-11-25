@@ -17,6 +17,9 @@ export default function IMC() {
       [e.target.name]: e.target.value
     }));
   };
+  
+
+  
 
   function calcularIMC() {
     if (valor.altura === " " || valor.peso === " " || valor.altura === 0 || valor.peso === 0 ) {
