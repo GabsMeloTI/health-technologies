@@ -36,11 +36,11 @@ export default function Rodape() {
         <div className='elementos'>
             <h2>Cargo</h2>
             <ul>
-                <li>- PA</li>
-                <li>- PE</li>
-                <li>- PI</li>
-                <li>- PO</li>
-                <li>- PU</li>
+                <li>- Conexão API</li>
+                <li>- Ideia</li>
+                <li>- Estilização</li>
+                <li>- Adicionou elementos</li>
+                <li>- Adicionou img</li>
             </ul>
         </div>
     </div>

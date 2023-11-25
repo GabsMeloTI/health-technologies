@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A proposta da Solutech é criar um sistema que apresente precisão e automação de alguns cálculos essenciais como por exemplo o de índice de massa corporal, taxa de metabolismo basal etc. Que junto de algumas coletas de dados, seja possível prevenir doenças relacionadas ao estilo de vida do usuário, além disso, direcioná-lo especificamente para hábitos e dietas que melhorem sua situação, fazendo assim um acompanhamento e trazendo atualizações de sua evolução e desempenho. Muitas pessoas infelizmente acabam desistindo de adotar hábitos saudáveis por não conseguirem enxergar seus resultados fisicamente, por isso acreditamos que com o usuário tendo noção de que conseguiu prevenir uma possível doença que poderia vir a se desenvolver em sua vida apenas com seus novos hábitos, sirva como estimulo para continuar evoluindo e buscando cada vez mais um estilo de vida mais equilibrado.
 
-## Getting Started
+Buscamos melhor a saúde de vida dos nossos usuários, fazendo com que eles pensem e tenham vontade de ter uma práticar de exercícios mais ativo ou para que eles possam alcançar seus objetivos. Segue o que é possível fazer em nosso site:
+- Calcular índice de massa corporarl;
+- Calcular percentual de gordura;
+- Calcular taxa de metabolismo basal;
 
-First, run the development server:
+Algumas especificações para o nosso professor:
+- No cadastro temos que passar a data da seguinte forma: 2003-10-12T12:22:00;
+- Caso não queira realizar o cadastro, segue um email e um senha: gabriel@gmail.com | 091104
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Nossas URLs da API:
+- GET: http://localhost:8080/HealthSolu/api/usuario;
+- POST: http://localhost:8080/HealthSolu/api/usuario/;
+- PUT: http://localhost:8080/HealthSolu/api/usuario/ID;
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Link do GitHub:
