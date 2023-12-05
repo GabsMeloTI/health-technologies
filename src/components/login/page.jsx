@@ -58,7 +58,7 @@ export default function LoginTeste() {
                         <input type="password" name="senha" id="senha" placeholder="Senha"
                             value={loginData.senha}
                             onChange={handleChange}/>
-                        <button>Entrar</button>
+                        <button><Link href="/healthsolu/avaliacao">Entrar</Link></button>
                     </form>
                     
                     <p>Não tem cadastro? Então <Link href='/healthsolu/cadastro'>cadastre-se.</Link></p>
